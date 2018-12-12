@@ -1,0 +1,167 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road, .road2{
+  position: relative;
+}
+
+.sky{
+  height: 40%;
+  background: skyblue;
+}
+
+.grass{
+  height: 30%;
+  background: seagreen;
+}
+.tree{
+  position: absolute;
+  width: 100px;
+  bottom: 10px;
+  height: 200px;
+}
+.tree:nth-child(1){
+  right: 50%
+}
+.tree:nth-child(2){
+  right: 0;
+}
+.tree:nth-child(3){}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+.road2{
+  height: 10%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+.lines2{
+  box-sizing: border-box;
+  border: 2px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+.mario{
+  width: 100px;
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  animation-name: drive, jump;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  
+
+}
+.luigi{
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  animation:
+  jumpL 5s 5s  ease reverse infinite, 
+  drive 5s 1s both infinite ;
+}
+.mario2{
+  transform: rotateX(180deg);
+  width: 50px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  animation: 
+  jumpL 2s 4s  ease reverse infinite, 
+  drive 5s 5s both infinite reverse;
+
+  /* animation-delay: 2s; */
+}
+.luigi2 img{
+  transform: rotateY(-180deg);
+}
+.luigi2{
+  transform: rotateY(180deg);
+  width: 50px;
+  position: absolute;
+  top: -30px;
+  animation:
+  jumpL 3s 4s  ease reverse infinite, 
+  drive 5s 5s both infinite reverse;
+}
+.cloud{
+  position: absolute;
+
+}
+.cloud:nth-child(1){
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+.cloud:nth-child(2){
+  width: 300px;
+  top: 0px;
+  animation: wind 50s linear infinite reverse;
+  /* opacy: 0.5; */
+}
+
+
+/*// KEYFRAMES //*/
+@keyframes drive{
+  from{ transform: translateX(-100px); } 
+  to{ transform: translateX(1920px)}
+}
+  @keyframes wind{
+    from{left: -300px; /*transform: translateY(50px);*/}
+    to{left: 100%; /*transform: translateY(1000px); */}
+  }
+@keyframes jump{
+  0%{ top: -30px} 
+  50%{ top: -60px; }
+  100%{ top: -20px; }
+}
+@keyframes jumpL{
+  0%{ top: -30px; } 
+  50%{ top: -60px; }
+  100%{ top: -20px; }
+}
+/* @keyframes rotate{
+
+  0%{transform: rotate(90deg)}
+  25%{transform: rotate(180deg)}
+  50%{transform: rotate(270deg)}
+  75%{transform:rotate(360deg)}
+  100%{transform:rotate(0deg)} */
+
+  }
+
+
+
+
+
